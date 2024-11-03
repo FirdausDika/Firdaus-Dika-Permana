@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+
+<!-- ini Top Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <!-- profil di pojok kanan -->
+        <div class="d-flex align-items-center ms-auto">
+            <span class="text-white me-2">Firdaus Dika Permana</span>
+            <img src="img/botol minum.JPG" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 70%;">
+        </div>
+    </div>
+</nav>
+<!-- abis Top Bar -->
+
+
+
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="bg-primary text-white p-6" style="width: 200px; min-height: 100vh; transition: width 0.3s;">
+        <!-- Tombolbuat nutup sidebar -->
+        <button onclick="toggleSidebar()" class="btn btn-primary text-white" style="position: absolute; top: 10px; left: 10px; z-index: 1;">&#9776;</button>
+        
+        <!-- Admin Profile Section -->
+        <div id="profileSection" class="text-center mb-2">
+            <img src="img/logo unpam empire.png" alt="Admin Profile" class="profile-image mb-2" style="width: 50px; height: auto;">
+            <h5 class="text-white">Universitas Pamulang</h5>
+        </div>
+        
+        <ul class="nav flex-column mt-3">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="index.html">
+                    <i class="bi bi-house-door me-2"></i> Dashboard
+                </a>
+            </li>
+            
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading d-flex justify-content-center align-items-center" style="height: 30px;">
+                Menu Karyawan
+            </div>
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="karyawan.html">
+                    <i class="bi bi-person-circle me-2"></i> Data Karyawan
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="jabatan.html">
+                    <i class="bi bi-briefcase me-2"></i> Data Jabatan
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="divisi.html">
+                    <i class="bi bi-diagram-3 me-2"></i> Data Divisi
+                </a>
+            </li>
+
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading d-flex justify-content-center align-items-center" style="height: 30px;">
+                Menu Absensi
+            </div>
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link text-white" href="absensi.html">
+                    <i class="bi bi-calendar-check"></i> Absensi
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="izin.html">
+                    <i class="bi bi-calendar2-event"></i> Izin
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="lembur.html">
+                    <i class="bi bi-calendar-check-fill"></i> Lembur
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Tombol buat buka sidebar -->
+    <button onclick="toggleSidebar()" id="openSidebarBtn" class="btn btn-primary text-white" style="position: absolute; top: 10px; left: 10px; z-index: 1;">&#9776;</button>
+    
+    <!-- Main Content -->
+    <div class="container-fluid p-4">
+        <h2 class="mb-4">Sistem Informasi Karyawan</h2>
+        <h4 class="mb-4">Dashboard Admin</h4>
+    
+        <div class="row">
+            <!-- Total Karyawan -->
+            <div class="col-md-3">
+                <div class="card shadow-sm mb-3 border-left-primary">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-person-fill stat-icon fa-2x text-gray-300"></i>
+                            <h6 class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Karyawan</h6>
+                            <h5 class="font-weight-bold text-gray-800">4</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Total Jabatan -->
+            <div class="col-md-3">
+                <div class="card shadow-sm mb-3 border-left-primary">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-calendar2-check-fill stat-icon fa-2x text-gray-300"></i>
+                            <h6 class="text-xs font-weight-bold text-primary text-uppercase mb-1">Absensi Hari Ini</h6>
+                            <h5 class="font-weight-bold text-gray-800">4</h5>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Total Divisi -->
+            <div class="col-md-3">
+                <div class="card shadow-sm mb-3 border-left-primary">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-check-circle-fill stat-icon fa-2x text-gray-300"></i>
+                            <h6 class="text-xs font-weight-bold text-primary text-uppercase mb-1">Izin Menunggu Konfirmasi</h6>
+                            <h5 class="font-weight-bold text-gray-800">1</h5>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        
+        <!---Absensi-->
+            <div class="col-md-3">
+                <div class="card shadow-sm mb-3 border-left-primary">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-check-circle-fill stat-icon fa-2x text-gray-300"></i>
+                            <h6 class="text-xs font-weight-bold text-primary text-uppercase mb-1">Lembur Menunggu Konfirmasi</h6>
+                            <h5 class="font-weight-bold text-gray-800">0</h5>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+</div>  
+    </div>
+</div>
+<script src="js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
